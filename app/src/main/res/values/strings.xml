@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MarvinControlPanel</string>
+    <string name="bt_power_err">Error!</string>
+    <string name="bt_power_turning_off">turning off &#8230;</string>
+    <string name="bt_power_turning_on">turning on &#8230;</string>
+    <string name="bt_power_off">off</string>
+    <string name="bt_power_on">on</string>
+    <string name="bt_power_undefined">undefined</string>
+    <string name="menu_settings">Settings</string>
+    <string name="pref_bt_mac">Bluetooth MAC address (RPi)</string>
+    <string name="pref_bt_mac_description">MAC address of the bluetooth module of the Raspberry Pi.</string>
+    <string name="rpi_bt_mac">B8:27:EB:27:39:A1</string>
 </resources>

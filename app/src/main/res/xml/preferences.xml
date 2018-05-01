@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:key="raspberry_pi_bt_mac"
+        android:defaultValue="@string/rpi_bt_mac"
+        android:title="@string/pref_bt_mac"
+        android:summary="@string/pref_bt_mac_description"/>
+
+</PreferenceScreen>

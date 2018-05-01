@@ -2,12 +2,13 @@ package com.example.android.marvincontrolpanel
 
 import android.app.Activity
 import android.bluetooth.BluetoothAdapter
-import android.content.BroadcastReceiver
 import android.content.Intent
 import android.content.IntentFilter
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +42,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val menuInflater = menuInflater
+        menuInflater.inflate(R.menu.panel_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item!!.itemId == R.id.menu_settings) {
+            val intentSettingsActivity = Intent(this, SettingsActivity::class.java)
+            startActivity(intentSettingsActivity)
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_ENABLE_BT) {
             if (resultCode ==  Activity.RESULT_OK) {
@@ -55,12 +71,18 @@ class MainActivity : AppCompatActivity() {
         btPowerState = state
         val btInfo = findViewById<TextView>(R.id.bluetooth_power_state)
         btInfo.text = when (state) {
-            BluetoothAdapter.ERROR ->  "Error!"
-            BluetoothAdapter.STATE_TURNING_OFF -> "turning off ..."
-            BluetoothAdapter.STATE_TURNING_ON -> "turning on ..."
-            BluetoothAdapter.STATE_OFF -> "off"
-            BluetoothAdapter.STATE_ON -> "on"
-            else -> "undefined"
+            BluetoothAdapter.ERROR ->  getString(R.string.bt_power_err)
+            BluetoothAdapter.STATE_TURNING_OFF -> getString(R.string.bt_power_turning_off)
+            BluetoothAdapter.STATE_TURNING_ON -> getString(R.string.bt_power_turning_on)
+            BluetoothAdapter.STATE_OFF -> getString(R.string.bt_power_off)
+            BluetoothAdapter.STATE_ON -> getString(R.string.bt_power_on)
+            else -> getString(R.string.bt_power_undefined)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        unregisterReceiver(broadcastReceiver)
     }
 }
