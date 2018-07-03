@@ -7,6 +7,6 @@ import android.content.Intent
 
 class BtBroadcastReceiver(private val activity: MainActivity) : BroadcastReceiver() {
     override fun onReceive(p0: Context?, p1: Intent?) {
-        activity.SetBluetoothPowerState(p1!!.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR))
+        activity.setBluetoothPowerState(p1!!.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR))
     }
 }

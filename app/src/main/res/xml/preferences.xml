@@ -1,10 +1,256 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <EditTextPreference
-        android:key="raspberry_pi_bt_mac"
-        android:defaultValue="@string/rpi_bt_mac"
-        android:title="@string/pref_bt_mac"
-        android:summary="@string/pref_bt_mac_description"/>
+    <PreferenceCategory
+        android:title="@string/settings_title_main">
+
+        <EditTextPreference
+            android:key="raspberry_pi_bt_mac"
+            android:defaultValue="@string/rpi_bt_mac"
+            android:title="@string/pref_bt_mac"
+            android:summary="@string/pref_bt_mac_description"/>
+
+        <EditTextPreference
+            android:key="tolerance_to_middle"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/tolerance_to_middle"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settings_title_frog">
+
+        <EditTextPreference
+            android:key="frog_hue_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/hue_lower"/>
+
+        <EditTextPreference
+            android:key="frog_hue_upper"
+            android:defaultValue="@string/hsv_hue_max"
+            android:title="@string/hue_upper"/>
+
+        <EditTextPreference
+            android:key="frog_sat_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/sat_lower"/>
+
+        <EditTextPreference
+            android:key="frog_sat_upper"
+            android:defaultValue="@string/hsv_max"
+            android:title="@string/sat_upper"/>
+
+        <EditTextPreference
+            android:key="frog_val_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/val_lower"/>
+
+        <EditTextPreference
+            android:key="frog_val_upper"
+            android:defaultValue="@string/hsv_max"
+            android:title="@string/val_upper" />
+
+        <EditTextPreference
+            android:key="frog_min_cont_size"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/min_cont_size" />
+
+        <ListPreference
+            android:key="frog_cont_type"
+            android:entries="@array/cont_entries"
+            android:entryValues="@array/cont_values"
+            android:defaultValue="@string/cont_default"
+            android:title="@string/cont_type_title"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settings_title_leopard">
+
+        <EditTextPreference
+            android:key="leopard_hue_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/hue_lower"/>
+
+        <EditTextPreference
+            android:key="leopard_hue_upper"
+            android:defaultValue="@string/hsv_hue_max"
+            android:title="@string/hue_upper"/>
+
+        <EditTextPreference
+            android:key="leopard_sat_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/sat_lower"/>
+
+        <EditTextPreference
+            android:key="leopard_sat_upper"
+            android:defaultValue="@string/hsv_max"
+            android:title="@string/sat_upper"/>
+
+        <EditTextPreference
+            android:key="leopard_val_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/val_lower"/>
+
+        <EditTextPreference
+            android:key="leopard_val_upper"
+            android:defaultValue="@string/hsv_max"
+            android:title="@string/val_upper" />
+
+        <EditTextPreference
+            android:key="leopard_min_cont_size"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/min_cont_size" />
+
+        <ListPreference
+            android:key="leopard_cont_type"
+            android:entries="@array/cont_entries"
+            android:entryValues="@array/cont_values"
+            android:defaultValue="@string/cont_default"
+            android:title="@string/cont_type_title"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settings_title_rhino">
+
+        <EditTextPreference
+            android:key="rhino_hue_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/hue_lower"/>
+
+        <EditTextPreference
+            android:key="rhino_hue_upper"
+            android:defaultValue="@string/hsv_hue_max"
+            android:title="@string/hue_upper"/>
+
+        <EditTextPreference
+            android:key="rhino_sat_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/sat_lower"/>
+
+        <EditTextPreference
+            android:key="rhino_sat_upper"
+            android:defaultValue="@string/hsv_max"
+            android:title="@string/sat_upper"/>
+
+        <EditTextPreference
+            android:key="rhino_val_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/val_lower"/>
+
+        <EditTextPreference
+            android:key="rhino_val_upper"
+            android:defaultValue="@string/hsv_max"
+            android:title="@string/val_upper" />
+
+        <EditTextPreference
+            android:key="rhino_min_cont_size"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/min_cont_size" />
+
+        <ListPreference
+            android:key="rhino_cont_type"
+            android:entries="@array/cont_entries"
+            android:entryValues="@array/cont_values"
+            android:defaultValue="@string/cont_default"
+            android:title="@string/cont_type_title"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settings_title_turtle">
+
+        <EditTextPreference
+            android:key="turtle_hue_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/hue_lower"/>
+
+        <EditTextPreference
+            android:key="turtle_hue_upper"
+            android:defaultValue="@string/hsv_hue_max"
+            android:title="@string/hue_upper"/>
+
+        <EditTextPreference
+            android:key="turtle_sat_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/sat_lower"/>
+
+        <EditTextPreference
+            android:key="turtle_sat_upper"
+            android:defaultValue="@string/hsv_max"
+            android:title="@string/sat_upper"/>
+
+        <EditTextPreference
+            android:key="turtle_val_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/val_lower"/>
+
+        <EditTextPreference
+            android:key="turtle_val_upper"
+            android:defaultValue="@string/hsv_max"
+            android:title="@string/val_upper" />
+
+        <EditTextPreference
+            android:key="turtle_min_cont_size"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/min_cont_size" />
+
+        <ListPreference
+            android:key="turtle_cont_type"
+            android:entries="@array/cont_entries"
+            android:entryValues="@array/cont_values"
+            android:defaultValue="@string/cont_default"
+            android:title="@string/cont_type_title"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settings_title_tomato">
+
+        <EditTextPreference
+            android:key="tomato_hue_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/hue_lower"/>
+
+        <EditTextPreference
+            android:key="tomato_hue_upper"
+            android:defaultValue="@string/hsv_hue_max"
+            android:title="@string/hue_upper"/>
+
+        <EditTextPreference
+            android:key="tomato_sat_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/sat_lower"/>
+
+        <EditTextPreference
+            android:key="tomato_sat_upper"
+            android:defaultValue="@string/hsv_max"
+            android:title="@string/sat_upper"/>
+
+        <EditTextPreference
+            android:key="tomato_val_lower"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/val_lower"/>
+
+        <EditTextPreference
+            android:key="tomato_val_upper"
+            android:defaultValue="@string/hsv_max"
+            android:title="@string/val_upper" />
+
+        <EditTextPreference
+            android:key="tomato_min_cont_size"
+            android:defaultValue="@string/hsv_zero"
+            android:title="@string/min_cont_size" />
+
+        <ListPreference
+            android:key="tomato_cont_type"
+            android:entries="@array/cont_entries"
+            android:entryValues="@array/cont_values"
+            android:defaultValue="@string/cont_default"
+            android:title="@string/cont_type_title"/>
+
+    </PreferenceCategory>
+
 
 </PreferenceScreen>
