@@ -57,6 +57,9 @@ class MainActivity : AppCompatActivity() {
             setBluetoothPowerState(BluetoothAdapter.STATE_ON)
         }
 
+        val handler = BtServiceHandler(this)
+        btService = BtService(handler)
+
         logMsgListView = findViewById(R.id.log_msg_view)
         logMsgAdapter = ArrayAdapter<String>(this, R.layout.message)
         logMsgListView!!.adapter = logMsgAdapter
@@ -80,9 +83,7 @@ class MainActivity : AppCompatActivity() {
             if (pairedDevices.size > 0) {
                 val rpiDevice = pairedDevices.find { d -> d.address == sharedPreferences.getString(getString(R.string.raspberry_pi_bt_mac), null) }
                 if (rpiDevice != null) {
-                    val handler = BtServiceHandler(this)
                     val btConnectTask = BtConnectTask(rpiDevice, UUID.fromString(getString(R.string.uuid)), bluetoothAdapter)
-                    btService = BtService(handler)
                     btService.connect(btConnectTask)
                 } else {
                     setConnectionState(BtService.RPI_NOT_PAIRED)
