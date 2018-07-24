@@ -10,11 +10,6 @@
             android:title="@string/pref_bt_mac"
             android:summary="@string/pref_bt_mac_description"/>
 
-        <EditTextPreference
-            android:key="tolerance_to_middle"
-            android:defaultValue="@string/hsv_zero"
-            android:title="@string/tolerance_to_middle"/>
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -55,12 +50,15 @@
             android:defaultValue="@string/hsv_zero"
             android:title="@string/min_cont_size" />
 
-        <ListPreference
-            android:key="frog_cont_type"
-            android:entries="@array/cont_entries"
-            android:entryValues="@array/cont_values"
-            android:defaultValue="@string/cont_default"
-            android:title="@string/cont_type_title"/>
+        <EditTextPreference
+            android:key="frog_cont_size_tolerance"
+            android:defaultValue="@string/cont_size_tolerance_default"
+            android:title="@string/cont_size_tolerance" />
+
+        <EditTextPreference
+            android:key="frog_tolerance_to_middle"
+            android:defaultValue="@string/tolerance_to_middle_default"
+            android:title="@string/tolerance_to_middle" />
 
     </PreferenceCategory>
 
@@ -102,12 +100,15 @@
             android:defaultValue="@string/hsv_zero"
             android:title="@string/min_cont_size" />
 
-        <ListPreference
-            android:key="leopard_cont_type"
-            android:entries="@array/cont_entries"
-            android:entryValues="@array/cont_values"
-            android:defaultValue="@string/cont_default"
-            android:title="@string/cont_type_title"/>
+        <EditTextPreference
+            android:key="leopard_cont_size_tolerance"
+            android:defaultValue="@string/cont_size_tolerance_default"
+            android:title="@string/cont_size_tolerance" />
+
+        <EditTextPreference
+            android:key="leopard_tolerance_to_middle"
+            android:defaultValue="@string/tolerance_to_middle_default"
+            android:title="@string/tolerance_to_middle" />
 
     </PreferenceCategory>
 
@@ -149,12 +150,15 @@
             android:defaultValue="@string/hsv_zero"
             android:title="@string/min_cont_size" />
 
-        <ListPreference
-            android:key="rhino_cont_type"
-            android:entries="@array/cont_entries"
-            android:entryValues="@array/cont_values"
-            android:defaultValue="@string/cont_default"
-            android:title="@string/cont_type_title"/>
+        <EditTextPreference
+            android:key="rhino_cont_size_tolerance"
+            android:defaultValue="@string/cont_size_tolerance_default"
+            android:title="@string/cont_size_tolerance" />
+
+        <EditTextPreference
+            android:key="rhino_tolerance_to_middle"
+            android:defaultValue="@string/tolerance_to_middle_default"
+            android:title="@string/tolerance_to_middle" />
 
     </PreferenceCategory>
 
@@ -196,12 +200,15 @@
             android:defaultValue="@string/hsv_zero"
             android:title="@string/min_cont_size" />
 
-        <ListPreference
-            android:key="turtle_cont_type"
-            android:entries="@array/cont_entries"
-            android:entryValues="@array/cont_values"
-            android:defaultValue="@string/cont_default"
-            android:title="@string/cont_type_title"/>
+        <EditTextPreference
+            android:key="turtle_cont_size_tolerance"
+            android:defaultValue="@string/cont_size_tolerance_default"
+            android:title="@string/cont_size_tolerance" />
+
+        <EditTextPreference
+            android:key="turtle_tolerance_to_middle"
+            android:defaultValue="@string/tolerance_to_middle_default"
+            android:title="@string/tolerance_to_middle" />
 
     </PreferenceCategory>
 
@@ -243,12 +250,15 @@
             android:defaultValue="@string/hsv_zero"
             android:title="@string/min_cont_size" />
 
-        <ListPreference
-            android:key="tomato_cont_type"
-            android:entries="@array/cont_entries"
-            android:entryValues="@array/cont_values"
-            android:defaultValue="@string/cont_default"
-            android:title="@string/cont_type_title"/>
+        <EditTextPreference
+            android:key="tomato_cont_size_tolerance"
+            android:defaultValue="@string/cont_size_tolerance_default"
+            android:title="@string/cont_size_tolerance" />
+
+        <EditTextPreference
+            android:key="tomato_tolerance_to_middle"
+            android:defaultValue="@string/tolerance_to_middle_default"
+            android:title="@string/tolerance_to_middle" />
 
     </PreferenceCategory>
 

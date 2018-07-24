@@ -32,7 +32,7 @@
     <string name="sat_lower">Saturation (Lower)</string>
     <string name="val_upper">Value (Upper)</string>
     <string name="val_lower">Value (Lower)</string>
-    <string name="cont_type_title">Contour Type</string>
+    <string name="cont_size_tolerance">Contour Size Tolerance</string>
     <string name="min_cont_size">Contour Size (min.)</string>
     <string name="tolerance_to_middle">Tolerance to Middle</string>
 
@@ -46,6 +46,8 @@
     <string name="hsv_zero">0</string>
     <string name="hsv_hue_max">179</string>
     <string name="hsv_max">255</string>
+    <string name="tolerance_to_middle_default">10</string>
+    <string name="cont_size_tolerance_default">1.8</string>
     <string name="cont_default">r</string>
     <string-array name="cont_entries">
         <item>@string/cont_type_rectangle</item>

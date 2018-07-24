@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter
 import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.TextView
+import java.nio.ByteBuffer
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -166,16 +167,28 @@ class MainActivity : AppCompatActivity() {
     fun animalSelected(v: View) {
         logMsgAdapter!!.clear()
         val tag = v.tag.toString()
-        val data = ByteArray(9)
+        val data = ByteArray(15)
         data[0] = sharedPreferences.getString(tag + "_hue_lower", getString(R.string.hsv_zero)).toInt().toByte()
         data[1] = sharedPreferences.getString(tag + "_sat_lower", getString(R.string.hsv_zero)).toInt().toByte()
         data[2] = sharedPreferences.getString(tag + "_val_lower", getString(R.string.hsv_zero)).toInt().toByte()
         data[3] = sharedPreferences.getString(tag + "_hue_upper", getString(R.string.hsv_hue_max)).toInt().toByte()
         data[4] = sharedPreferences.getString(tag + "_sat_upper", getString(R.string.hsv_max)).toInt().toByte()
         data[5] = sharedPreferences.getString(tag + "_val_upper", getString(R.string.hsv_max)).toInt().toByte()
-        data[6] = sharedPreferences.getString(tag + "_min_cont_size", getString(R.string.hsv_zero)).toInt().toByte()
-        data[7] = sharedPreferences.getString(tag + "_cont_type", getString(R.string.cont_type_rectangle)).single().toByte()
-        data[8] = sharedPreferences.getString("tolerance_to_middle", getString(R.string.hsv_zero)).toInt().toByte()
+        data[6] = sharedPreferences.getString(tag + "_tolerance_to_middle", getString(R.string.tolerance_to_middle_default)).toInt().toByte()
+
+        val intBytes = ByteBuffer.allocate(4).putInt(sharedPreferences.getString(tag + "_min_cont_size", getString(R.string.hsv_zero)).toInt()).array()
+        var i = 7
+        for (b in intBytes) {
+            data[i] = b
+            i++
+        }
+
+        val nextIntBytes = ByteBuffer.allocate(4).putInt(sharedPreferences.getString(tag + "_cont_size_tolerance", getString(R.string.hsv_zero)).toInt()).array()
+        for (b in nextIntBytes) {
+            data[i] = b
+            i++
+        }
+
         btService.write(data)
     }
 
